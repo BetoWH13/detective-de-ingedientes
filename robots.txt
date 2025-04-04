@@ -1,8 +1,5 @@
-/* robots.txt */
 User-agent: *
-Disallow: /reportes/
 Disallow: /legal/
-Allow: /blog/
 Allow: /
 
-
+Sitemap: https://detectivedeingredientes.com/sitemap.xml
