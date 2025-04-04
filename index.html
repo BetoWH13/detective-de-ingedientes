@@ -2,44 +2,43 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Detective de Ingredientes</title>
-  <meta name="description" content="Analiza ingredientes alimentarios, descubre aditivos ocultos y encuentra alternativas limpias.">
+  <meta name="description" content="Analiza ingredientes de alimentos al instante. Descubre riesgos, funciones y alternativas." />
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
 </head>
 <body class="bg-white text-gray-900 font-sans p-6">
   <main class="max-w-3xl mx-auto">
-    <header class="mb-6">
-      <h1 class="text-4xl font-bold mb-2">🕵️‍♂️ Detective de Ingredientes</h1>
-      <nav class="mb-4 space-x-4">
-        <a href="/index.html" class="text-blue-600 underline">🏠 Inicio</a>
-        <a href="/blog/index.html" class="text-blue-600 underline">🧠 Blog</a>
-      </nav>
-      <p class="text-lg">Descifra etiquetas. Detecta aditivos ocultos. Descubre qué hay realmente en tu comida.</p>
-    </header>
+    <h1 class="text-4xl font-bold mb-4">🕵️ Detective de Ingredientes</h1>
+    <p class="mb-6 text-lg">Escribe un ingrediente para descubrir qué es, para qué se usa y si conviene evitarlo.</p>
 
-    <!-- Herramienta de Análisis -->
-    <section class="bg-gray-100 p-4 rounded shadow mb-10">
-      <h2 class="text-2xl font-semibold mb-2">🔍 Analizador de Ingredientes</h2>
-      <p class="mb-3">Escribe cualquier ingrediente y te diremos qué es, por qué se usa y si deberías evitarlo.</p>
-      <input type="text" id="ingredientInput" placeholder="Ej: Rojo 40, glutamato, suero de leche…" class="w-full p-2 rounded border mb-4"/>
-      <button onclick="analizarIngrediente()" class="bg-green-600 text-white px-4 py-2 rounded">Analizar Ingrediente</button>
-      <div id="resultado" class="mt-6"></div>
-      <p class="text-xs text-gray-500 italic mt-4">
-        ⚡ Lógica del analizador basada en un prompt original de 
-        <a href="https://discord.gg/stunspot" class="underline text-blue-500" target="_blank" rel="noopener noreferrer">
-          Collaborative Dynamics (vía STUNspot Discord)
-        </a>.
-      </p>
+    <!-- Herramienta Analizadora -->
+    <div class="bg-gray-100 p-4 rounded shadow mb-8">
+      <input type="text" id="ingredientInput" placeholder="Ej: rojo 40, suero de leche, PGPR..." class="w-full p-2 rounded border mb-4" />
+      <button onclick="analizarIngrediente()" class="bg-green-600 text-white px-4 py-2 rounded">🔍 Analizar</button>
+      <div id="result" class="mt-6"></div>
+    </div>
+
+    <!-- Reportes Destacados -->
+    <section class="mb-12">
+      <h2 class="text-2xl font-semibold mb-2">📌 Reportes Populares</h2>
+      <ul class="list-disc list-inside text-blue-600">
+        <li><a href="/reportes/maruchan.html" class="underline">Sopa Maruchan: Análisis de Ingredientes</a></li>
+        <li><a href="/reportes/gansito.html" class="underline">Gansito Marinela: ¿Qué contiene realmente?</a></li>
+      </ul>
     </section>
 
+    <!-- Navegación adicional -->
+    <nav class="mb-6">
+      <a href="/blog/" class="text-blue-600 underline mr-4">📰 Blog</a>
+      <a href="/legal/terminos.html" class="text-blue-600 underline mr-4">Términos</a>
+      <a href="/legal/privacidad.html" class="text-blue-600 underline mr-4">Privacidad</a>
+      <a href="/legal/afiliados.html" class="text-blue-600 underline">Afiliados</a>
+    </nav>
+
     <footer class="text-sm text-gray-500">
-      <nav class="mb-2">
-        <a href="/legal/terminos.html" class="text-blue-600 underline mr-4">Términos de Uso</a>
-        <a href="/legal/privacidad.html" class="text-blue-600 underline mr-4">Política de Privacidad</a>
-        <a href="/legal/afiliados.html" class="text-blue-600 underline">Divulgación de Afiliados</a>
-      </nav>
-      <p>Detective de Ingredientes © 2025. Solo con fines educativos.</p>
+      <p>DetectiveDeIngredientes.com © 2025. Proyecto educativo sin fines de lucro.</p>
+      <p class="mt-1">Basado en el concepto original de <a href="https://discord.gg/stunspot" class="underline text-blue-500">Collaborative Dynamics</a>.</p>
     </footer>
   </main>
 
@@ -47,12 +46,12 @@
   <script>
     function analizarIngrediente() {
       const input = document.getElementById("ingredientInput").value.toLowerCase();
-      const resultadoDiv = document.getElementById("resultado");
-      const datos = window.ingredientesData || {};
-      const info = datos[input];
+      const resultDiv = document.getElementById("result");
+      const data = window.ingredientesData || {};
+      const info = data[input];
 
       if (info) {
-        resultadoDiv.innerHTML = `
+        resultDiv.innerHTML = `
           <h3 class="text-xl font-bold">${info.name}</h3>
           <p><strong>Categoría:</strong> ${info.category}</p>
           <p><strong>Preocupaciones:</strong> ${info.concerns.join(", ")}</p>
@@ -66,9 +65,10 @@
           ` : ""}
         `;
       } else {
-        resultadoDiv.innerHTML = `<p class="text-red-600">Ingrediente no encontrado en nuestra base de datos.</p>`;
+        resultDiv.innerHTML = `<p class="text-red-600">Ingrediente no encontrado en nuestra base de datos.</p>`;
       }
     }
   </script>
 </body>
 </html>
+
