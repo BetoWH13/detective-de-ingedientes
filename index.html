@@ -4,88 +4,76 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Detective de Ingredientes</title>
-  <meta name="description" content="Analiza ingredientes alimentarios de forma instantánea. Descubre sus riesgos, aditivos y alternativas saludables.">
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+  <meta name="description" content="¿Qué hay en tu comida? Analiza ingredientes, identifica aditivos, y encuentra mejores alternativas.">
+  <link href="https://unpkg.com/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
 </head>
 <body class="bg-white text-gray-900 font-sans">
+  <main class="max-w-3xl mx-auto px-6 py-10">
 
-  <!-- HERO SECTION -->
-  <section class="bg-green-50 px-6 py-20 text-center">
-    <div class="max-w-3xl mx-auto">
-      <h1 class="text-5xl font-extrabold mb-4">🕵️ Detective de Ingredientes</h1>
-      <p class="text-xl text-gray-700 mb-6">¿Qué hay realmente en tu comida? Investiga ingredientes, aditivos y encuentra alternativas más saludables.</p>
-      <a href="#analizador" class="bg-green-600 text-white px-6 py-3 rounded-full text-lg font-semibold hover:bg-green-700 transition">🔍 Empezar a Analizar</a>
-    </div>
-  </section>
+    <!-- HERO -->
+    <header class="text-center mb-10">
+      <h1 class="text-4xl font-extrabold mb-4">🕵️ Detective de Ingredientes</h1>
+      <p class="text-lg text-gray-700">Descubre qué hay realmente en tu comida. Analiza ingredientes, detecta aditivos y encuentra opciones más saludables.</p>
+      <a href="#analyzer" class="inline-block mt-6 bg-green-600 text-white px-5 py-2 rounded hover:bg-green-700 transition">🌽 Empezar a Analizar</a>
+    </header>
 
-  <!-- FEATURE SECTION -->
-  <section class="py-16 bg-white">
-    <div class="max-w-4xl mx-auto px-6 text-center space-y-10">
+    <!-- SECCIONES DESTACADAS -->
+    <section class="grid gap-6 mb-10">
       <div>
-        <h2 class="text-3xl font-bold mb-2">💡 ¿Qué Hace Esta Herramienta?</h2>
-        <p class="text-gray-700 text-lg">Analiza instantáneamente ingredientes como <strong>jarabe de maíz, rojo 40, glutamato</strong> y muchos más.</p>
+        <h2 class="text-xl font-semibold mb-1">❓ ¿Qué Hace Esta Herramienta?</h2>
+        <p class="text-gray-700">Analiza instantáneamente ingredientes como <strong>jarabe de maíz</strong>, <strong>rojo 40</strong>, <strong>glutamato</strong> y muchos más.</p>
       </div>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-left">
-        <div class="bg-gray-50 p-6 rounded-lg shadow">
-          <h3 class="text-xl font-bold mb-2">🚫 Riesgos y Aditivos</h3>
-          <p>Te explicamos por qué ciertos ingredientes podrían ser cuestionables o poco saludables.</p>
-        </div>
-        <div class="bg-gray-50 p-6 rounded-lg shadow">
-          <h3 class="text-xl font-bold mb-2">📋 Alternativas Reales</h3>
-          <p>Te damos sugerencias de productos más limpios, con enlaces útiles.</p>
-        </div>
-        <div class="bg-gray-50 p-6 rounded-lg shadow">
-          <h3 class="text-xl font-bold mb-2">📚 Educación Transparente</h3>
-          <p>Informes y artículos de lectura fácil sobre alimentos populares en Latinoamérica.</p>
-        </div>
+      <div>
+        <h2 class="text-xl font-semibold mb-1">🚨 Riesgos y Aditivos</h2>
+        <p class="text-gray-700">Te explicamos por qué ciertos ingredientes podrían ser cuestionables o poco saludables.</p>
       </div>
-    </div>
-  </section>
+      <div>
+        <h2 class="text-xl font-semibold mb-1">🍏 Alternativas Reales</h2>
+        <p class="text-gray-700">Te damos sugerencias de productos más limpios, con enlaces útiles.</p>
+      </div>
+      <div>
+        <h2 class="text-xl font-semibold mb-1">📘 Educación Transparente</h2>
+        <p class="text-gray-700">Artículos fáciles de leer sobre ingredientes populares en Latinoamérica.</p>
+      </div>
+    </section>
 
-  <!-- ANALYZER TOOL -->
-  <section id="analizador" class="py-20 bg-gray-100">
-    <div class="max-w-2xl mx-auto px-6 text-center">
-      <h2 class="text-2xl font-bold mb-4">🔬 Analiza un Ingrediente</h2>
-      <p class="mb-6 text-gray-700">Escribe cualquier ingrediente para descubrir su función, riesgos y opciones más saludables.</p>
-      <input type="text" id="ingredientInput" placeholder="Ej: glutamato, lecitina de soya, jarabe de maíz…" class="w-full p-3 rounded border border-gray-300 mb-4" />
-      <button onclick="analyzeIngredient()" class="w-full bg-green-600 text-white font-semibold py-3 rounded hover:bg-green-700 transition">🔎 Analizar</button>
-      <div id="result" class="mt-8 text-left text-sm"></div>
-    </div>
-  </section>
+    <!-- ANALIZADOR -->
+    <section id="analyzer" class="bg-gray-100 p-6 rounded shadow mb-12">
+      <h2 class="text-2xl font-semibold mb-4">🔍 Analiza un Ingrediente</h2>
+      <p class="mb-2">Escribe cualquier ingrediente para descubrir su función, riesgos y alternativas.</p>
+      <input type="text" id="ingredientInput" placeholder="Ej: glutamato, lecitina de soya…" class="w-full p-2 rounded border mb-4"/>
+      <button onclick="analyzeIngredient()" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">🔎 Analizar</button>
+      <div id="result" class="mt-6"></div>
+    </section>
 
-  <!-- FEATURED REPORTS -->
-  <section class="py-16 px-6 bg-white">
-    <div class="max-w-3xl mx-auto text-center">
-      <h2 class="text-2xl font-bold mb-6">🧾 Reportes Especiales</h2>
-      <ul class="list-disc list-inside text-left text-blue-600 space-y-2">
+    <!-- REPORTES ESPECIALES -->
+    <section class="mb-10">
+      <h2 class="text-2xl font-semibold mb-4">📑 Reportes Especiales</h2>
+      <ul class="list-disc list-inside text-blue-600 space-y-1">
         <li><a href="/reportes/gansito.html" class="underline">Gansito Marinela</a></li>
         <li><a href="/reportes/maruchan.html" class="underline">Sopa Maruchan Sabor Pollo</a></li>
-        <li><a href="/reportes/coca-cola-report.html" class="underline">Coca-Cola Clásica</a></li>
+        <li><a href="/reportes/coca-cola.html" class="underline">Coca-Cola Clásica</a></li>
         <li><a href="/reportes/sabritas-adobadas.html" class="underline">Papas Sabritas Adobadas</a></li>
       </ul>
-    </div>
-  </section>
+      <p class="mt-4"><a href="/blog/index.html" class="text-sm text-blue-500 underline">📰 Ver artículos del blog</a></p>
+    </section>
 
-  <!-- BLOG LINK -->
-  <section class="py-8 bg-gray-50 text-center">
-    <a href="/blog/index.html" class="text-blue-700 font-medium underline text-lg">📚 Ver artículos del blog</a>
-  </section>
+    <!-- FOOTER -->
+    <footer class="text-center text-sm text-gray-500 border-t pt-6">
+      <p class="mb-2">
+        Detective de Ingredientes © 2025 – Solo con fines educativos.
+        <br>
+        🇲🇽 Español · <a href="https://ingredientdetective.com" class="underline text-blue-600">Versión en Inglés</a>
+      </p>
+      <nav class="mb-2">
+        <a href="/legal/terms.html" class="text-blue-600 underline mr-4">Términos</a>
+        <a href="/legal/privacy.html" class="text-blue-600 underline mr-4">Privacidad</a>
+        <a href="/legal/affiliate.html" class="text-blue-600 underline">Afiliados</a>
+      </nav>
+      <p class="text-xs mt-2">🔬 Con tecnología inspirada por <a href="https://discord.gg/stunspot" class="underline text-blue-600" target="_blank">Collaborative Dynamics (Stunspot)</a></p>
+    </footer>
 
-  <!-- FOOTER -->
-  <footer class="bg-white border-t py-8 text-center text-sm text-gray-500">
-    <p class="mb-2">Detective de Ingredientes © 2025 – Solo con fines educativos.</p>
-    <p>
-      🇲🇽 Español · <a href="https://ingredientdetective.com" target="_blank" class="text-blue-600 underline">Versión en Inglés 🇺🇸</a>
-    </p>
-    <nav class="mt-3 space-x-4">
-      <a href="/legal/terms.html" class="underline text-blue-500">Términos</a>
-      <a href="/legal/privacy.html" class="underline text-blue-500">Privacidad</a>
-      <a href="/legal/affiliate.html" class="underline text-blue-500">Afiliados</a>
-    </nav>
-    <p class="mt-4 text-gray-400 text-xs">
-      🤝 Con tecnología inspirada por <a href="https://discord.gg/stunspot" target="_blank" class="underline">Collaborative Dynamics (Stunspot)</a>
-    </p>
-  </footer>
+  </main>
 
   <script src="/ingredientes.js"></script>
   <script>
@@ -97,12 +85,12 @@
 
       if (info) {
         resultDiv.innerHTML = `
-          <h3 class="text-xl font-bold mb-2">${info.name}</h3>
+          <h3 class="text-xl font-bold">${info.name}</h3>
           <p><strong>Categoría:</strong> ${info.category}</p>
-          <p><strong>Riesgos:</strong> ${info.concerns.join(", ")}</p>
+          <p><strong>Preocupaciones:</strong> ${info.concerns.join(", ")}</p>
           ${info.alternatives?.length ? `
             <p class="mt-2"><strong>Alternativas:</strong></p>
-            <ul class="list-disc list-inside mt-1">
+            <ul class="list-disc list-inside">
               ${info.alternatives.map(alt => `
                 <li><a href="${alt.link}" target="_blank" class="text-blue-600 underline">${alt.name}</a> (${alt.badges.join(", ")})</li>
               `).join("")}
