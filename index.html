@@ -4,41 +4,54 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Detective de Ingredientes</title>
-  <meta name="description" content="Analiza ingredientes de alimentos al instante. Descubre riesgos, funciones y alternativas." />
+  <meta name="description" content="Analiza ingredientes alimentarios en segundos. Descubre aditivos cuestionables, riesgos comunes y alternativas más limpias para tu dieta." />
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
 </head>
 <body class="bg-white text-gray-900 font-sans p-6">
   <main class="max-w-3xl mx-auto">
-    <h1 class="text-4xl font-bold mb-4">🕵️ Detective de Ingredientes</h1>
-    <p class="mb-6 text-lg">Escribe un ingrediente para descubrir qué es, para qué se usa y si conviene evitarlo.</p>
+    <header class="mb-6">
+      <h1 class="text-4xl font-bold mb-2">🕵️‍♂️ Detective de Ingredientes</h1>
+      <p class="text-lg text-gray-700">Analiza cualquier ingrediente y descubre si es saludable, riesgoso o controversial. Ideal para consumidores conscientes en LATAM.</p>
+    </header>
 
-    <!-- Herramienta Analizadora -->
-    <div class="bg-gray-100 p-4 rounded shadow mb-8">
-      <input type="text" id="ingredientInput" placeholder="Ej: rojo 40, suero de leche, PGPR..." class="w-full p-2 rounded border mb-4" />
+    <!-- Herramienta principal -->
+    <section class="bg-gray-100 p-4 rounded shadow mb-8">
+      <input type="text" id="ingredientInput" placeholder="Ej. glutamato monosódico, jarabe de maíz…" class="w-full p-2 rounded border mb-4" />
       <button onclick="analizarIngrediente()" class="bg-green-600 text-white px-4 py-2 rounded">🔍 Analizar</button>
-      <div id="result" class="mt-6"></div>
-    </div>
+      <div id="resultado" class="mt-6"></div>
+    </section>
 
-    <!-- Reportes Destacados -->
+    <!-- Reportes destacados -->
     <section class="mb-12">
-      <h2 class="text-2xl font-semibold mb-2">📌 Reportes Populares</h2>
-      <ul class="list-disc list-inside text-blue-600">
-        <li><a href="/reportes/maruchan.html" class="underline">Sopa Maruchan: Análisis de Ingredientes</a></li>
-        <li><a href="/reportes/gansito.html" class="underline">Gansito Marinela: ¿Qué contiene realmente?</a></li>
+      <h2 class="text-2xl font-semibold mb-3">🧪 Reportes de Productos Populares</h2>
+      <ul class="list-disc list-inside text-blue-600 space-y-1">
+        <li><a href="/reports/maruchan-report.html" class="underline">🍜 Sopa Maruchan Sabor Pollo</a></li>
+        <li><a href="/reports/gansito-report.html" class="underline">🍰 Gansito Marinela</a></li>
+        <li><a href="/reports/coca-cola-report.html" class="underline">🥤 Coca-Cola</a></li>
+        <li><a href="/reports/fanta-naranja-report.html" class="underline">🍊 Fanta Naranja</a></li>
+        <li><a href="/reports/sabritas-adobadas-report.html" class="underline">🌶️ Papas Sabritas Adobadas</a></li>
       </ul>
     </section>
 
-    <!-- Navegación adicional -->
-    <nav class="mb-6">
-      <a href="/blog/" class="text-blue-600 underline mr-4">📰 Blog</a>
-      <a href="/legal/terminos.html" class="text-blue-600 underline mr-4">Términos</a>
-      <a href="/legal/privacidad.html" class="text-blue-600 underline mr-4">Privacidad</a>
-      <a href="/legal/afiliados.html" class="text-blue-600 underline">Afiliados</a>
-    </nav>
+    <!-- Acceso al blog -->
+    <section class="mb-12">
+      <h2 class="text-xl font-semibold mb-2">📰 Artículos Recientes</h2>
+      <ul class="list-disc list-inside text-blue-600 space-y-1">
+        <li><a href="/blog/rojo40.html" class="underline">⚠️ Colorantes Artificiales en LATAM: Rojo 40 y Amarillo 5</a></li>
+        <li><a href="/blog/saborizantes-naturales.html" class="underline">🤨 Saborizantes Naturales: ¿Qué Significa Realmente?</a></li>
+        <li><a href="/blog/index.html" class="underline">🧠 Ver Todos los Artículos</a></li>
+      </ul>
+    </section>
 
-    <footer class="text-sm text-gray-500">
-      <p>DetectiveDeIngredientes.com © 2025. Proyecto educativo sin fines de lucro.</p>
-      <p class="mt-1">Basado en el concepto original de <a href="https://discord.gg/stunspot" class="underline text-blue-500">Collaborative Dynamics</a>.</p>
+    <!-- Créditos -->
+    <footer class="text-sm text-gray-500 border-t pt-4">
+      <p>DetectiveDeIngredientes.com © 2025 – Sitio educativo. Información basada en fuentes públicas.</p>
+      <p>Inspirado por la comunidad de <a href="https://discord.gg/stunspot" class="underline text-blue-600" target="_blank">Collaborative Dynamics</a>.</p>
+      <nav class="mt-2">
+        <a href="/legal/terms.html" class="text-blue-600 underline mr-3">Términos</a>
+        <a href="/legal/privacy.html" class="text-blue-600 underline mr-3">Privacidad</a>
+        <a href="/legal/affiliate.html" class="text-blue-600 underline">Afiliados</a>
+      </nav>
     </footer>
   </main>
 
@@ -46,20 +59,20 @@
   <script>
     function analizarIngrediente() {
       const input = document.getElementById("ingredientInput").value.toLowerCase();
-      const resultDiv = document.getElementById("result");
+      const resultDiv = document.getElementById("resultado");
       const data = window.ingredientesData || {};
       const info = data[input];
 
       if (info) {
         resultDiv.innerHTML = `
-          <h3 class="text-xl font-bold">${info.name}</h3>
-          <p><strong>Categoría:</strong> ${info.category}</p>
-          <p><strong>Preocupaciones:</strong> ${info.concerns.join(", ")}</p>
-          ${info.alternatives?.length ? `
+          <h3 class="text-xl font-bold">${info.nombre}</h3>
+          <p><strong>Categoría:</strong> ${info.categoria}</p>
+          <p><strong>Riesgos:</strong> ${info.riesgos.join(", ")}</p>
+          ${info.alternativas?.length ? `
             <p class="mt-2"><strong>Alternativas:</strong></p>
             <ul class="list-disc list-inside">
-              ${info.alternatives.map(alt => `
-                <li><a href="${alt.link}" target="_blank" class="text-blue-600 underline">${alt.name}</a> (${alt.badges.join(", ")})</li>
+              ${info.alternativas.map(alt => `
+                <li><a href="${alt.link}" target="_blank" class="text-blue-600 underline">${alt.nombre}</a> (${alt.etiquetas.join(", ")})</li>
               `).join("")}
             </ul>
           ` : ""}
