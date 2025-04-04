@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Detective de Ingredientes</title>
+  <meta name="description" content="Analiza ingredientes alimentarios, descubre aditivos ocultos y encuentra alternativas limpias.">
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+</head>
+<body class="bg-white text-gray-900 font-sans p-6">
+  <main class="max-w-3xl mx-auto">
+    <header class="mb-6">
+      <h1 class="text-4xl font-bold mb-2">🕵️‍♂️ Detective de Ingredientes</h1>
+      <nav class="mb-4 space-x-4">
+        <a href="/index.html" class="text-blue-600 underline">🏠 Inicio</a>
+        <a href="/blog/index.html" class="text-blue-600 underline">🧠 Blog</a>
+      </nav>
+      <p class="text-lg">Descifra etiquetas. Detecta aditivos ocultos. Descubre qué hay realmente en tu comida.</p>
+    </header>
+
+    <!-- Herramienta de Análisis -->
+    <section class="bg-gray-100 p-4 rounded shadow mb-10">
+      <h2 class="text-2xl font-semibold mb-2">🔍 Analizador de Ingredientes</h2>
+      <p class="mb-3">Escribe cualquier ingrediente y te diremos qué es, por qué se usa y si deberías evitarlo.</p>
+      <input type="text" id="ingredientInput" placeholder="Ej: Rojo 40, glutamato, suero de leche…" class="w-full p-2 rounded border mb-4"/>
+      <button onclick="analizarIngrediente()" class="bg-green-600 text-white px-4 py-2 rounded">Analizar Ingrediente</button>
+      <div id="resultado" class="mt-6"></div>
+      <p class="text-xs text-gray-500 italic mt-4">
+        ⚡ Lógica del analizador basada en un prompt original de 
+        <a href="https://discord.gg/stunspot" class="underline text-blue-500" target="_blank" rel="noopener noreferrer">
+          Collaborative Dynamics (vía STUNspot Discord)
+        </a>.
+      </p>
+    </section>
+
+    <footer class="text-sm text-gray-500">
+      <nav class="mb-2">
+        <a href="/legal/terminos.html" class="text-blue-600 underline mr-4">Términos de Uso</a>
+        <a href="/legal/privacidad.html" class="text-blue-600 underline mr-4">Política de Privacidad</a>
+        <a href="/legal/afiliados.html" class="text-blue-600 underline">Divulgación de Afiliados</a>
+      </nav>
+      <p>Detective de Ingredientes © 2025. Solo con fines educativos.</p>
+    </footer>
+  </main>
+
+  <script src="/ingredientes.js"></script>
+  <script>
+    function analizarIngrediente() {
+      const input = document.getElementById("ingredientInput").value.toLowerCase();
+      const resultadoDiv = document.getElementById("resultado");
+      const datos = window.ingredientesData || {};
+      const info = datos[input];
+
+      if (info) {
+        resultadoDiv.innerHTML = `
+          <h3 class="text-xl font-bold">${info.name}</h3>
+          <p><strong>Categoría:</strong> ${info.category}</p>
+          <p><strong>Preocupaciones:</strong> ${info.concerns.join(", ")}</p>
+          ${info.alternatives?.length ? `
+            <p class="mt-2"><strong>Alternativas:</strong></p>
+            <ul class="list-disc list-inside">
+              ${info.alternatives.map(alt => `
+                <li><a href="${alt.link}" target="_blank" class="text-blue-600 underline">${alt.name}</a> (${alt.badges.join(", ")})</li>
+              `).join("")}
+            </ul>
+          ` : ""}
+        `;
+      } else {
+        resultadoDiv.innerHTML = `<p class="text-red-600">Ingrediente no encontrado en nuestra base de datos.</p>`;
+      }
+    }
+  </script>
+</body>
+</html>
