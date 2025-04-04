@@ -4,101 +4,144 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Detective de Ingredientes</title>
-  <meta name="description" content="¿Qué hay en tu comida? Analiza ingredientes, identifica aditivos, y encuentra mejores alternativas.">
-  <link href="https://unpkg.com/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+  <meta name="description" content="Descubre qué hay realmente en tu comida. Analiza ingredientes, detecta aditivos y encuentra opciones más saludables.">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: system-ui, sans-serif;
+      background-color: #f9fafb;
+      color: #111827;
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+    h1, h2 {
+      margin-bottom: 0.5rem;
+    }
+    .section {
+      margin-bottom: 2rem;
+    }
+    ul {
+      padding-left: 1.2rem;
+    }
+    li {
+      margin-bottom: 0.3rem;
+    }
+    input[type="text"] {
+      padding: 0.5rem;
+      width: 100%;
+      max-width: 300px;
+      margin-right: 0.5rem;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    button {
+      padding: 0.5rem 1rem;
+      background-color: #10b981;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    a {
+      color: #2563eb;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    footer {
+      margin-top: 4rem;
+      padding-top: 1rem;
+      border-top: 1px solid #e5e7eb;
+      font-size: 0.9rem;
+      color: #6b7280;
+    }
+    .footer-links a {
+      margin-right: 1rem;
+    }
+    .flag {
+      font-size: 1rem;
+    }
+  </style>
 </head>
-<body class="bg-white text-gray-900 font-sans">
-  <main class="max-w-3xl mx-auto px-6 py-10">
+<body>
+  <div class="container">
+    <h1>🧪 Detective de Ingredientes</h1>
+    <p>Descubre qué hay realmente en tu comida. Analiza ingredientes, detecta aditivos y encuentra opciones más saludables.</p>
+    <p><a href="#analizador">🔎 Empezar a Analizar</a></p>
 
-    <!-- HERO -->
-    <header class="text-center mb-10">
-      <h1 class="text-4xl font-extrabold mb-4">🕵️ Detective de Ingredientes</h1>
-      <p class="text-lg text-gray-700">Descubre qué hay realmente en tu comida. Analiza ingredientes, detecta aditivos y encuentra opciones más saludables.</p>
-      <a href="#analyzer" class="inline-block mt-6 bg-green-600 text-white px-5 py-2 rounded hover:bg-green-700 transition">🌽 Empezar a Analizar</a>
-    </header>
+    <div class="section">
+      <h2>❓ ¿Qué Hace Esta Herramienta?</h2>
+      <p>Analiza ingredientes como <strong>jarabe de maíz, rojo 40, glutamato</strong> y muchos más.</p>
 
-    <!-- SECCIONES DESTACADAS -->
-    <section class="grid gap-6 mb-10">
-      <div>
-        <h2 class="text-xl font-semibold mb-1">❓ ¿Qué Hace Esta Herramienta?</h2>
-        <p class="text-gray-700">Analiza instantáneamente ingredientes como <strong>jarabe de maíz</strong>, <strong>rojo 40</strong>, <strong>glutamato</strong> y muchos más.</p>
-      </div>
-      <div>
-        <h2 class="text-xl font-semibold mb-1">🚨 Riesgos y Aditivos</h2>
-        <p class="text-gray-700">Te explicamos por qué ciertos ingredientes podrían ser cuestionables o poco saludables.</p>
-      </div>
-      <div>
-        <h2 class="text-xl font-semibold mb-1">🍏 Alternativas Reales</h2>
-        <p class="text-gray-700">Te damos sugerencias de productos más limpios, con enlaces útiles.</p>
-      </div>
-      <div>
-        <h2 class="text-xl font-semibold mb-1">📘 Educación Transparente</h2>
-        <p class="text-gray-700">Artículos fáciles de leer sobre ingredientes populares en Latinoamérica.</p>
-      </div>
-    </section>
+      <h2>🚨 Riesgos y Aditivos</h2>
+      <p>Te explicamos por qué ciertos ingredientes podrían ser cuestionables o poco saludables.</p>
 
-    <!-- ANALIZADOR -->
-    <section id="analyzer" class="bg-gray-100 p-6 rounded shadow mb-12">
-      <h2 class="text-2xl font-semibold mb-4">🔍 Analiza un Ingrediente</h2>
-      <p class="mb-2">Escribe cualquier ingrediente para descubrir su función, riesgos y alternativas.</p>
-      <input type="text" id="ingredientInput" placeholder="Ej: glutamato, lecitina de soya…" class="w-full p-2 rounded border mb-4"/>
-      <button onclick="analyzeIngredient()" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">🔎 Analizar</button>
-      <div id="result" class="mt-6"></div>
-    </section>
+      <h2>🍃 Alternativas Reales</h2>
+      <p>Te damos sugerencias de productos más limpios, con enlaces útiles.</p>
 
-    <!-- REPORTES ESPECIALES -->
-    <section class="mb-10">
-      <h2 class="text-2xl font-semibold mb-4">📑 Reportes Especiales</h2>
-      <ul class="list-disc list-inside text-blue-600 space-y-1">
-        <li><a href="/reportes/gansito.html" class="underline">Gansito Marinela</a></li>
-        <li><a href="/reportes/maruchan.html" class="underline">Sopa Maruchan Sabor Pollo</a></li>
-        <li><a href="/reportes/coca-cola.html" class="underline">Coca-Cola Clásica</a></li>
-        <li><a href="/reportes/sabritas-adobadas.html" class="underline">Papas Sabritas Adobadas</a></li>
+      <h2>📘 Educación Transparente</h2>
+      <p>Artículos fáciles de leer sobre ingredientes populares en Latinoamérica.</p>
+    </div>
+
+    <div class="section" id="analizador">
+      <h2>🧪 Analiza un Ingrediente</h2>
+      <p>Escribe cualquier ingrediente para descubrir su función, riesgos y alternativas.</p>
+      <input type="text" id="ingredientInput" placeholder="Ej: glutamato, lecitina de soya">
+      <button onclick="analyzeIngredient()">🔍 Analizar</button>
+      <div id="result" class="mt-4"></div>
+    </div>
+
+    <div class="section">
+      <h2>📑 Reportes Especiales</h2>
+      <ul>
+        <li><a href="/reportes/gansito.html">Gansito Marinela</a></li>
+        <li><a href="/reportes/maruchan.html">Sopa Maruchan Sabor Pollo</a></li>
+        <li><a href="/reportes/coca-cola-report.html">Coca-Cola Clásica</a></li>
+        <li><a href="/reportes/sabritas-adobadas.html">Papas Sabritas Adobadas</a></li>
       </ul>
-      <p class="mt-4"><a href="/blog/index.html" class="text-sm text-blue-500 underline">📰 Ver artículos del blog</a></p>
-    </section>
+      <p><a href="/blog/index.html">📚 Ver artículos del blog</a></p>
+    </div>
 
-    <!-- FOOTER -->
-    <footer class="text-center text-sm text-gray-500 border-t pt-6">
-      <p class="mb-2">
-        Detective de Ingredientes © 2025 – Solo con fines educativos.
-        <br>
-        🇲🇽 Español · <a href="https://ingredientdetective.com" class="underline text-blue-600">Versión en Inglés</a>
-      </p>
-      <nav class="mb-2">
-        <a href="/legal/terms.html" class="text-blue-600 underline mr-4">Términos</a>
-        <a href="/legal/privacy.html" class="text-blue-600 underline mr-4">Privacidad</a>
-        <a href="/legal/affiliate.html" class="text-blue-600 underline">Afiliados</a>
-      </nav>
-      <p class="text-xs mt-2">🔬 Con tecnología inspirada por <a href="https://discord.gg/stunspot" class="underline text-blue-600" target="_blank">Collaborative Dynamics (Stunspot)</a></p>
+    <footer>
+      <div class="footer-links">
+        <span class="flag">🇲🇽</span> <a href="https://ingredientdetective.com" target="_blank">Versión en Inglés</a> |
+        <a href="/legal/terms.html">Términos</a> |
+        <a href="/legal/privacy.html">Privacidad</a> |
+        <a href="/legal/affiliate.html">Afiliados</a>
+      </div>
+      <p class="mt-2">Con tecnología inspirada por <a href="https://discord.gg/stunspot" target="_blank">Collaborative Dynamics (Stunspot)</a></p>
     </footer>
-
-  </main>
+  </div>
 
   <script src="/ingredientes.js"></script>
   <script>
     function analyzeIngredient() {
-      const input = document.getElementById("ingredientInput").value.toLowerCase();
+      const input = document.getElementById("ingredientInput").value.toLowerCase().trim();
       const resultDiv = document.getElementById("result");
       const data = window.ingredientsData || {};
       const info = data[input];
 
       if (info) {
         resultDiv.innerHTML = `
-          <h3 class="text-xl font-bold">${info.name}</h3>
+          <h3 style="font-weight:bold; margin-top:1rem;">${info.name}</h3>
           <p><strong>Categoría:</strong> ${info.category}</p>
           <p><strong>Preocupaciones:</strong> ${info.concerns.join(", ")}</p>
           ${info.alternatives?.length ? `
-            <p class="mt-2"><strong>Alternativas:</strong></p>
-            <ul class="list-disc list-inside">
+            <p><strong>Alternativas:</strong></p>
+            <ul>
               ${info.alternatives.map(alt => `
-                <li><a href="${alt.link}" target="_blank" class="text-blue-600 underline">${alt.name}</a> (${alt.badges.join(", ")})</li>
+                <li><a href="${alt.link}" target="_blank">${alt.name}</a> (${alt.badges.join(", ")})</li>
               `).join("")}
             </ul>
           ` : ""}
         `;
       } else {
-        resultDiv.innerHTML = `<p class="text-red-600">Ingrediente no encontrado en la base de datos.</p>`;
+        resultDiv.innerHTML = `<p style="color:#dc2626;">Ingrediente no encontrado en la base de datos.</p>`;
       }
     }
   </script>
