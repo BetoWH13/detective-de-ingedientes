@@ -1,25 +1,57 @@
-
-<!-- sitemap.xml -->
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://detectivedeingredientes.com/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
-  </url>
-  <url>
-    <loc>https://detectivedeingredientes.com/blog/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://detectivedeingredientes.com/reportes/maruchan.html</loc>
+    <loc>https://detectivedeingredientes.com/reports/maruchan-report.html</loc>
+    <lastmod>2025-04-04</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://detectivedeingredientes.com/reportes/gansito.html</loc>
+    <loc>https://detectivedeingredientes.com/reports/gansito-report.html</loc>
+    <lastmod>2025-04-04</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://detectivedeingredientes.com/reports/coca-cola-report.html</loc>
+    <lastmod>2025-04-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://detectivedeingredientes.com/reports/fanta-naranja-report.html</loc>
+    <lastmod>2025-04-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://detectivedeingredientes.com/reports/sabritas-adobadas-report.html</loc>
+    <lastmod>2025-04-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://detectivedeingredientes.com/blog/index.html</loc>
+    <lastmod>2025-04-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://detectivedeingredientes.com/blog/rojo40.html</loc>
+    <lastmod>2025-04-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://detectivedeingredientes.com/blog/saborizantes-naturales.html</loc>
+    <lastmod>2025-04-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://detectivedeingredientes.com/index.html</loc>
+    <lastmod>2025-04-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
 </urlset>
