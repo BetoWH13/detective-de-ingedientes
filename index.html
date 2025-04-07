@@ -21,7 +21,7 @@
     </header>
 
     <!-- Analizador -->
-    <section class="bg-gray-100 p-6 rounded-xl shadow-xl mb-14">
+    <section class="bg-gray-100 p-6 rounded-xl shadow-xl mb-14 max-w-3xl mx-auto">
       <h2 class="text-3xl font-semibold mb-4">🔍 Analizador de Ingredientes</h2>
       <div class="flex flex-col sm:flex-row gap-4">
         <input type="text" id="ingredientInput" placeholder="Ej: rojo 40, benzoato de sodio…" class="flex-grow p-3 rounded-lg border border-gray-300 shadow-inner text-lg"/>
@@ -33,6 +33,30 @@
       </p>
     </section>
 
+    <!-- Reportes Populares -->
+    <section class="mb-12">
+      <h2 class="text-2xl font-semibold mb-4">📦 Reportes Populares</h2>
+      <ul class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-blue-600">
+        <li><a href="/reportes/gansito-report.html" class="underline">Gansito Marinela</a></li>
+        <li><a href="/reportes/maruchan-report.html" class="underline">Sopa Maruchan Sabor Pollo</a></li>
+        <li><a href="/reportes/coca-cola-report.html" class="underline">Coca-Cola</a></li>
+        <li><a href="/reportes/fanta-naranja-report.html" class="underline">Fanta Naranja</a></li>
+        <li><a href="/reportes/sabritas-adobadas-report.html" class="underline">Papas Sabritas Adobadas</a></li>
+      </ul>
+    </section>
+
+    <!-- Blog -->
+    <section class="mb-12">
+      <h2 class="text-xl font-semibold mb-4">🧠 Desde el Blog</h2>
+      <ul class="list-disc list-inside text-blue-600">
+        <li><a href="/blog/jarabe-maiz-fructosa.html" class="underline">¿Qué es el jarabe de maíz de alta fructosa?</a></li>
+        <li><a href="/blog/rojo40.html" class="underline">¿Es seguro el colorante Rojo 40?</a></li>
+        <li><a href="/blog/emulsificantes-ultraprocesados.html" class="underline">Emulsionantes en ultraprocesados</a></li>
+        <li><a href="/blog/saborizantes-naturales.html" class="underline">Saborizantes "naturales": ¿engañan al consumidor?</a></li>
+        <li><a href="/blog/colorante-dulce-mexico.html" class="underline">Colorantes en dulces mexicanos</a></li>
+      </ul>
+    </section>
+
     <footer class="text-sm text-gray-500 border-t pt-6 text-center">
       <nav class="mb-2">
         <a href="/legal/terms.html" class="text-blue-600 underline mr-4">Términos</a>
@@ -40,17 +64,15 @@
         <a href="/legal/affiliate.html" class="text-blue-600 underline">Afiliados</a>
       </nav>
       <p>Detective de Ingredientes © 2025 — Proyecto educativo independiente.</p>
-      <p class="text-xs text-gray-500 mt-1">
-        Este sitio no está afiliado ni respaldado por ningún fabricante. Las marcas mencionadas son propiedad de sus respectivos dueños. Las fórmulas y listas de ingredientes pueden cambiar sin previo aviso.
-      </p>
+      <p class="text-xs text-gray-500 mt-1">Este sitio no está afiliado ni respaldado por ningún fabricante. Las marcas mencionadas son propiedad de sus respectivos dueños. Las fórmulas y listas de ingredientes pueden cambiar sin previo aviso.</p>
       <p class="text-xs text-gray-400 mt-1">
         Basado en prompt original de <a href="https://discord.gg/stunspot" target="_blank" class="text-blue-400 underline">Collaborative Dynamics / STUNspot</a>.
       </p>
     </footer>
   </main>
 
-  <!-- JS Locales -->
   <script src="/js/fuse.min.js"></script>
   <script src="/ingredientes.js"></script>
 </body>
 </html>
+
