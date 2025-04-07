@@ -3,42 +3,41 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Detective de Ingredientes | Descubre Qué Comes</title>
-  <meta name="description" content="Analiza etiquetas de alimentos, identifica aditivos y descubre alternativas más saludables. Detective de Ingredientes es tu herramienta confiable para decisiones informadas en LATAM." />
-  <meta name="keywords" content="ingredientes, análisis, aditivos, colorantes, conservadores, saludables, productos procesados, etiquetas, LATAM, detective de ingredientes" />
+  <title>Detective de Ingredientes</title>
+  <meta name="description" content="Explora ingredientes alimentarios, detecta aditivos ocultos y encuentra alternativas saludables en productos populares de LATAM.">
+  <meta name="keywords" content="ingredientes, aditivos, análisis de comida, etiquetas, salud, ultraprocesados, jarabe de maíz, colorantes, conservadores">
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
 </head>
-<body class="bg-gray-50 text-gray-900 font-sans">
-  <main class="max-w-4xl mx-auto px-4 py-8">
+<body class="bg-white text-gray-900 font-sans">
+  <main class="max-w-5xl mx-auto px-6 py-10">
     <header class="mb-10 text-center">
-      <h1 class="text-5xl font-extrabold text-green-700 mb-4">🕵️‍♀️ Detective de Ingredientes</h1>
-      <p class="text-lg text-gray-700">Analiza etiquetas de productos, descubre aditivos ocultos y toma decisiones informadas sobre lo que comes.</p>
-      <nav class="mt-4 space-x-4">
+      <h1 class="text-5xl font-bold mb-4">🧪 Detective de Ingredientes</h1>
+      <p class="text-xl text-gray-700 max-w-2xl mx-auto">Descubre qué hay realmente en tus alimentos. Detecta ingredientes cuestionables y encuentra mejores alternativas.</p>
+      <nav class="mt-6 space-x-6">
         <a href="/index.html" class="text-blue-600 underline">🏠 Inicio</a>
         <a href="/blog/index.html" class="text-blue-600 underline">🧠 Blog</a>
-        <a href="https://ingredientdetective.com" class="text-blue-600 underline" target="_blank">🇺🇸 English Version</a>
+        <a href="https://ingredientdetective.com" class="text-blue-600 underline" target="_blank">🇺🇸 English</a>
       </nav>
     </header>
 
-    <!-- Herramienta de análisis -->
-    <section class="bg-white p-6 rounded-xl shadow-md mb-12">
-      <h2 class="text-3xl font-semibold mb-3 text-center">🔍 Analizador de Ingredientes</h2>
-      <p class="mb-4 text-center text-gray-600">Escribe uno o más ingredientes separados por coma. Te mostraremos sus riesgos, categoría y alternativas sugeridas.</p>
-      <div class="flex flex-col sm:flex-row gap-2 items-center justify-center">
-        <input type="text" id="ingredientInput" placeholder="Ej: glutamato monosódico, azúcar, rojo 40…" class="flex-1 p-3 rounded border border-gray-300 shadow-sm w-full"/>
-        <button onclick="analyzeIngredient()" class="bg-green-600 hover:bg-green-700 text-white px-6 py-2 rounded shadow">Analizar</button>
+    <!-- Herramienta -->
+    <section class="bg-gray-100 p-6 rounded-xl shadow-xl mb-14">
+      <h2 class="text-3xl font-semibold mb-4">🔍 Analiza Ingredientes</h2>
+      <p class="text-gray-700 mb-3 text-lg">Escribe uno o más ingredientes separados por coma. Detectaremos posibles riesgos y sugeriremos alternativas.</p>
+      <div class="flex flex-col sm:flex-row gap-4">
+        <input type="text" id="ingredientInput" placeholder="Ej: rojo 40, benzoato de sodio, glutamato…" class="flex-grow p-3 rounded-lg border border-gray-300 shadow-inner text-lg"/>
+        <button onclick="analyzeIngredient()" class="bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-lg font-semibold">Analizar</button>
       </div>
       <div id="result" class="mt-6"></div>
-      <p class="text-xs text-gray-500 italic mt-4 text-center">
-        ⚡ Lógica de análisis adaptada del prompt creado por
-        <a href="https://discord.gg/stunspot" class="underline text-blue-500" target="_blank">Collaborative Dynamics (STUNspot)</a>.
+      <p class="text-xs text-gray-500 italic mt-4">
+        ⚡ Herramienta basada en lógica adaptada de <a href="https://discord.gg/stunspot" class="underline text-blue-500" target="_blank">STUNspot</a>.
       </p>
     </section>
 
-    <!-- Reportes destacados -->
-    <section class="mb-16">
-      <h2 class="text-2xl font-bold mb-4 text-center">📦 Reportes de Productos Populares</h2>
-      <ul class="grid md:grid-cols-2 gap-4 list-disc list-inside text-blue-600">
+    <!-- Reportes Populares -->
+    <section class="mb-12">
+      <h2 class="text-2xl font-semibold mb-4">📦 Reportes Populares</h2>
+      <ul class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-blue-600">
         <li><a href="/reportes/gansito-report.html" class="underline">Gansito Marinela</a></li>
         <li><a href="/reportes/maruchan-report.html" class="underline">Sopa Maruchan Sabor Pollo</a></li>
         <li><a href="/reportes/coca-cola-report.html" class="underline">Coca-Cola</a></li>
@@ -48,30 +47,31 @@
     </section>
 
     <!-- Blog -->
-    <section class="mb-20">
-      <h2 class="text-2xl font-bold mb-4 text-center">📰 Desde el Blog</h2>
-      <ul class="grid md:grid-cols-2 gap-4 list-disc list-inside text-blue-600">
+    <section class="mb-12">
+      <h2 class="text-xl font-semibold mb-4">🧠 Desde el Blog</h2>
+      <ul class="list-disc list-inside text-blue-600">
         <li><a href="/blog/jarabe-maiz-fructosa.html" class="underline">¿Qué es el jarabe de maíz de alta fructosa?</a></li>
         <li><a href="/blog/rojo40.html" class="underline">¿Es seguro el colorante Rojo 40?</a></li>
-        <li><a href="/blog/emulsionantes-ultraprocesados.html" class="underline">Emulsionantes en productos ultraprocesados</a></li>
+        <li><a href="/blog/emulsionantes-ultraprocesados.html" class="underline">Emulsionantes en ultraprocesados</a></li>
         <li><a href="/blog/saborizantes-naturales.html" class="underline">Saborizantes "naturales": ¿engañan al consumidor?</a></li>
-        <li><a href="/blog/colorante-dulce-mexico.html" class="underline">Colorantes en dulces populares en México</a></li>
+        <li><a href="/blog/colorante-dulce-mexico.html" class="underline">Colorantes en dulces mexicanos</a></li>
       </ul>
     </section>
 
-    <footer class="text-sm text-gray-500 border-t pt-4">
-      <nav class="mb-2 text-center">
-        <a href="/legal/terms.html" class="text-blue-600 underline mx-2">Términos</a>
-        <a href="/legal/privacy.html" class="text-blue-600 underline mx-2">Privacidad</a>
-        <a href="/legal/affiliate.html" class="text-blue-600 underline mx-2">Afiliados</a>
+    <footer class="text-sm text-gray-500 border-t pt-6">
+      <nav class="mb-2">
+        <a href="/legal/terms.html" class="text-blue-600 underline mr-4">Términos de Servicio</a>
+        <a href="/legal/privacy.html" class="text-blue-600 underline mr-4">Privacidad</a>
+        <a href="/legal/affiliate.html" class="text-blue-600 underline">Afiliados</a>
       </nav>
-      <p class="text-center">Detective de Ingredientes © 2025. Con fines educativos únicamente.</p>
+      <p>Detective de Ingredientes © 2025 — Proyecto educativo independiente.</p>
+      <p class="text-xs text-gray-400 mt-1">
+        Basado en prompt original de <a href="https://discord.gg/stunspot" target="_blank" class="text-blue-400 underline">Collaborative Dynamics / STUNspot</a>.
+      </p>
     </footer>
   </main>
 
-  <!-- Fuse.js para fuzzy matching -->
   <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.6.2/dist/fuse.min.js"></script>
   <script src="/ingredientes.js"></script>
 </body>
 </html>
-
