@@ -128,3 +128,4 @@ document.getElementById("ingredientInput").addEventListener("input", function() 
     this.removeAttribute("title");
   }
 });
+
