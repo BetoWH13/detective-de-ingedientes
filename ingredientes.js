@@ -101,3 +101,66 @@ window.ingredientsData = {
     }]
   }
 };
+
+const fuse = new Fuse(Object.keys(window.ingredientsData), { includeScore: true, threshold: 0.4 });
+
+function analyzeIngredient() {
+  const input = document.getElementById("ingredientInput").value.toLowerCase();
+  const resultDiv = document.getElementById("result");
+  resultDiv.innerHTML = "";
+  const data = window.ingredientsData;
+  const terms = input.split(',').map(t => t.trim()).filter(Boolean);
+
+  terms.forEach(term => {
+    let matchKey = null;
+    let matchType = "";
+
+    if (data[term]) {
+      matchKey = term;
+      matchType = "Coincidencia exacta";
+    } else {
+      const fuzzy = fuse.search(term);
+      if (fuzzy.length > 0 && fuzzy[0].score <= 0.4) {
+        matchKey = fuzzy[0].item;
+        matchType = "Coincidencia aproximada";
+      }
+    }
+
+    if (!matchKey) {
+      resultDiv.innerHTML += `<div class="bg-red-100 border-l-4 border-red-500 text-red-700 p-4 mb-4">❌ Ingrediente no encontrado: <strong>${term}</strong></div>`;
+      return;
+    }
+
+    const ing = data[matchKey];
+    const concerns = ing.concerns.map(c => `<li>⚠️ ${c}</li>`).join('');
+    const alternatives = ing.alternatives.length
+      ? ing.alternatives.map(a => `
+        <li>
+          <a href="${a.link}" target="_blank" class="text-blue-600 underline font-medium">${a.name}</a>
+          <span class="text-xs text-gray-500">(${a.badges.join(", ")})</span>
+        </li>`).join('')
+      : '<p class="text-gray-500 text-sm">No hay alternativas sugeridas.</p>';
+
+    resultDiv.innerHTML += `
+      <div class="bg-white border border-gray-200 shadow-md rounded-xl p-5 mb-6">
+        <h3 class="text-xl font-bold mb-1">${ing.name} <span class="text-sm text-gray-500">[${ing.category}]</span> <span class="text-xs text-green-600">(${matchType})</span></h3>
+        <ul class="list-disc list-inside text-gray-800 text-sm mb-2">${concerns}</ul>
+        <div>
+          <strong class="text-sm text-gray-700">Alternativas sugeridas:</strong>
+          <ul class="list-disc list-inside mt-1">${alternatives}</ul>
+        </div>
+      </div>
+    `;
+  });
+}
+
+document.getElementById("ingredientInput").addEventListener("input", function () {
+  const list = Object.keys(window.ingredientsData);
+  const val = this.value.toLowerCase();
+  const matches = list.filter(k => k.includes(val)).slice(0, 5);
+  if (matches.length && val.length > 2) {
+    this.setAttribute("title", `Sugerencias: ${matches.join(", ")}`);
+  } else {
+    this.removeAttribute("title");
+  }
+});
