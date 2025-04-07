@@ -4,147 +4,88 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Detective de Ingredientes</title>
-  <meta name="description" content="Descubre qué hay realmente en tu comida. Analiza ingredientes, detecta aditivos y encuentra opciones más saludables.">
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: system-ui, sans-serif;
-      background-color: #f9fafb;
-      color: #111827;
-    }
-    .container {
-      max-width: 800px;
-      margin: 0 auto;
-      padding: 2rem;
-    }
-    h1, h2 {
-      margin-bottom: 0.5rem;
-    }
-    .section {
-      margin-bottom: 2rem;
-    }
-    ul {
-      padding-left: 1.2rem;
-    }
-    li {
-      margin-bottom: 0.3rem;
-    }
-    input[type="text"] {
-      padding: 0.5rem;
-      width: 100%;
-      max-width: 300px;
-      margin-right: 0.5rem;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-    }
-    button {
-      padding: 0.5rem 1rem;
-      background-color: #10b981;
-      color: white;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-    a {
-      color: #2563eb;
-      text-decoration: none;
-    }
-    a:hover {
-      text-decoration: underline;
-    }
-    footer {
-      margin-top: 4rem;
-      padding-top: 1rem;
-      border-top: 1px solid #e5e7eb;
-      font-size: 0.9rem;
-      color: #6b7280;
-    }
-    .footer-links a {
-      margin-right: 1rem;
-    }
-    .flag {
-      font-size: 1rem;
-    }
-  </style>
+  <meta name="description" content="Investiga ingredientes alimentarios, descifra etiquetas y explora informes detallados sobre snacks y productos populares.">
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
 </head>
-<body>
-  <div class="container">
-    <h1>🧪 Detective de Ingredientes</h1>
-    <p>Descubre qué hay realmente en tu comida. Analiza ingredientes, detecta aditivos y encuentra opciones más saludables.</p>
-    <p><a href="#analizador">🔎 Empezar a Analizar</a></p>
+<body class="bg-gray-50 text-gray-900 font-sans p-6">
+  <main class="max-w-3xl mx-auto">
+    <!-- Sección Hero -->
+    <header class="text-center mb-10">
+      <h1 class="text-4xl font-bold mb-2">🕵️ Detective de Ingredientes</h1>
+      <p class="text-lg max-w-xl mx-auto text-gray-700">
+        Analiza ingredientes al instante y revela riesgos ocultos — desde colorantes hasta aditivos.
+      </p>
+      <nav class="mt-4 space-x-4">
+        <a href="/index.html" class="text-blue-600 underline">🏠 Inicio</a>
+        <a href="/blog/index.html" class="text-blue-600 underline">🧠 Blog</a>
+        <a href="https://ingredientdetective.com" class="text-blue-600 underline">🇺🇸 English</a>
+      </nav>
+    </header>
 
-    <div class="section">
-      <h2>❓ ¿Qué Hace Esta Herramienta?</h2>
-      <p>Analiza ingredientes como <strong>jarabe de maíz, rojo 40, glutamato</strong> y muchos más.</p>
-
-      <h2>🚨 Riesgos y Aditivos</h2>
-      <p>Te explicamos por qué ciertos ingredientes podrían ser cuestionables o poco saludables.</p>
-
-      <h2>🍃 Alternativas Reales</h2>
-      <p>Te damos sugerencias de productos más limpios, con enlaces útiles.</p>
-
-      <h2>📘 Educación Transparente</h2>
-      <p>Artículos fáciles de leer sobre ingredientes populares en Latinoamérica.</p>
-    </div>
-
-    <div class="section" id="analizador">
-      <h2>🧪 Analiza un Ingrediente</h2>
-      <p>Escribe cualquier ingrediente para descubrir su función, riesgos y alternativas.</p>
-      <input type="text" id="ingredientInput" placeholder="Ej: glutamato, lecitina de soya">
-      <button onclick="analyzeIngredient()">🔍 Analizar</button>
-      <div id="result" class="mt-4"></div>
-    </div>
-
-    <div class="section">
-      <h2>📑 Reportes Especiales</h2>
-      <ul>
-        <li><a href="/reportes/gansito.html">Gansito Marinela</a></li>
-        <li><a href="/reportes/maruchan.html">Sopa Maruchan Sabor Pollo</a></li>
-        <li><a href="/reportes/coca-cola-report.html">Coca-Cola Clásica</a></li>
-        <li><a href="/reportes/sabritas-adobadas.html">Papas Sabritas Adobadas</a></li>
-      </ul>
-      <p><a href="/blog/index.html">📚 Ver artículos del blog</a></p>
-    </div>
-
-    <footer>
-      <div class="footer-links">
-        <span class="flag">🇲🇽</span> <a href="https://ingredientdetective.com" target="_blank">Versión en Inglés</a> |
-        <a href="/legal/terms.html">Términos</a> |
-        <a href="/legal/privacy.html">Privacidad</a> |
-        <a href="/legal/affiliate.html">Afiliados</a>
+    <!-- Herramienta de Análisis -->
+    <section class="bg-white p-6 shadow-lg rounded-lg mb-12">
+      <h2 class="text-2xl font-semibold mb-2">🔍 Analizador de Ingredientes</h2>
+      <p class="mb-4 text-gray-600">Escribe un ingrediente (o una lista separada por comas) para conocer sus riesgos y alternativas más saludables.</p>
+      <div class="flex">
+        <input type="text" id="ingredientInput" placeholder="Ej: Red 40, lecitina de soya..." class="flex-grow p-2 border rounded-l"/>
+        <button onclick="analyzeIngredient()" class="bg-green-600 text-white px-4 rounded-r">Analizar</button>
       </div>
-      <p class="mt-2">Con tecnología inspirada por <a href="https://discord.gg/stunspot" target="_blank">Collaborative Dynamics (Stunspot)</a></p>
+      <div id="result" class="mt-6"></div>
+      <p class="text-xs text-gray-500 italic mt-4">
+        ⚡ Lógica del analizador adaptada de un prompt por
+        <a href="https://discord.gg/stunspot" class="underline text-blue-500" target="_blank" rel="noopener noreferrer">
+          Collaborative Dynamics (STUNspot)
+        </a>.
+      </p>
+    </section>
+
+    <!-- Reportes Destacados -->
+    <section class="mb-12">
+      <h2 class="text-2xl font-bold mb-4">🔥 Explora Reportes Controversiales</h2>
+      <ul class="list-disc list-inside text-blue-600">
+        <li><a href="/reports/kraft-mac.html" class="underline">Reporte de Mac & Cheese de Kraft</a></li>
+        <li><a href="/reports/flamin-hot-cheetos.html" class="underline">Reporte de Flamin’ Hot Cheetos</a></li>
+        <li><a href="/reports/eggo-waffles.html" class="underline">Reporte de Waffles Eggo</a></li>
+        <li><a href="/reports/campbells-soup.html" class="underline">Reporte de Sopa Campbell’s</a></li>
+        <li><a href="/reports/coca-cola.html" class="underline">Reporte de Coca-Cola</a></li>
+        <li><a href="/reports/maruchan.html" class="underline">Reporte de Sopa Instantánea Maruchan</a></li>
+        <li><a href="/reports/gansito.html" class="underline">Reporte del Snack Gansito</a></li>
+        <li><a href="/reports/sabritas-adobadas.html" class="underline">Reporte de Papas Sabritas Adobadas</a></li>
+      </ul>
+    </section>
+
+    <!-- Blog -->
+    <section class="mb-12">
+      <h2 class="text-xl font-semibold mb-2">📰 Desde el Blog</h2>
+      <ul class="list-disc list-inside text-blue-600">
+        <li><a href="/blog/ingredient-decoder-label-tips.html" class="underline">Decodificador de Ingredientes: Cómo leer etiquetas como un experto</a></li>
+        <li><a href="/blog/natural-flavors-truth.html" class="underline">La Verdad sobre los Sabores Naturales</a></li>
+        <li><a href="/blog/is-red-40-safe.html" class="underline">¿Es seguro el Red 40? Análisis completo</a></li>
+        <li><a href="/blog/high-fructose-corn-syrup.html" class="underline">¿Qué tiene de malo el jarabe de maíz de alta fructosa?</a></li>
+        <li><a href="/blog/hidden-names-for-sugar.html" class="underline">Nombres Ocultos del Azúcar en las Etiquetas</a></li>
+      </ul>
+    </section>
+
+    <!-- Footer -->
+    <footer class="text-sm text-gray-500 border-t pt-4 mt-10">
+      <nav class="mb-2">
+        <a href="/legal/terms.html" class="text-blue-600 underline mr-4">Términos de Servicio</a>
+        <a href="/legal/privacy.html" class="text-blue-600 underline mr-4">Política de Privacidad</a>
+        <a href="/legal/affiliate.html" class="text-blue-600 underline">Divulgación de Afiliación</a>
+      </nav>
+      <p class="text-xs">Detective de Ingredientes © 2025. Solo con fines educativos.</p>
+      <p class="text-xs mt-1">Los enlaces de afiliados podrían generar una comisión sin costo adicional para ti.</p>
+      <p class="mt-2 text-xs text-gray-400">
+        Analizador de ingredientes impulsado por un prompt original de
+        <a href="https://discord.gg/stunspot" class="underline text-blue-500" target="_blank" rel="noopener noreferrer">
+          Collaborative Dynamics (vía STUNspot Discord)
+        </a>.
+      </p>
     </footer>
-  </div>
+  </main>
 
-  <script src="/ingredientes.js"></script>
-  <script>
-    function analyzeIngredient() {
-      const input = document.getElementById("ingredientInput").value.toLowerCase().trim();
-      const resultDiv = document.getElementById("result");
-      const data = window.ingredientsData || {};
-      const info = data[input];
-
-      if (info) {
-        resultDiv.innerHTML = `
-          <h3 style="font-weight:bold; margin-top:1rem;">${info.name}</h3>
-          <p><strong>Categoría:</strong> ${info.category}</p>
-          <p><strong>Preocupaciones:</strong> ${info.concerns.join(", ")}</p>
-          ${info.alternatives?.length ? `
-            <p><strong>Alternativas:</strong></p>
-            <ul>
-              ${info.alternatives.map(alt => `
-                <li><a href="${alt.link}" target="_blank">${alt.name}</a> (${alt.badges.join(", ")})</li>
-              `).join("")}
-            </ul>
-          ` : ""}
-        `;
-      } else {
-        resultDiv.innerHTML = `<p style="color:#dc2626;">Ingrediente no encontrado en la base de datos.</p>`;
-      }
-    }
-  </script>
+  <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.6.2/dist/fuse.min.js"></script>
+  <script src="/ingredients.js"></script>
 </body>
 </html>
 
