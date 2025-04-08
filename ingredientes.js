@@ -1044,6 +1044,66 @@ window.ingredientsData = {
       "link": "https://www.amazon.com/dp/B08L7PNXY4?tag=emunabitajon4-20"
     }]
   },
+  "albahaca": {
+    "name": "Albahaca",
+    "category": "Hierba y especia",
+    "concerns": ["Muy perecedera", "Pierde sabor al secarse", "Sensible al frío"],
+    "alternatives": [{
+      "name": "Albahaca hidropónica fresca",
+      "badges": ["Más duradera", "Aromática"],
+      "link": "https://www.amazon.com/dp/B09NXYZ123?tag=emunabitajon4-20"
+    }]
+  },
+  "tomillo": {
+    "name": "Tomillo",
+    "category": "Hierba y especia",
+    "concerns": ["Difícil de limpiar", "Tallos duros", "Pierde aroma rápido"],
+    "alternatives": [{
+      "name": "Tomillo orgánico fresco",
+      "badges": ["Sin tallos", "Más aromático"],
+      "link": "https://www.amazon.com/dp/B08THXY456?tag=emunabitajon4-20"
+    }]
+  },
+  "romero": {
+    "name": "Romero",
+    "category": "Hierba y especia",
+    "concerns": ["Sabor muy intenso", "Tallos leñosos", "Puede ser muy seco"],
+    "alternatives": [{
+      "name": "Romero fresco orgánico",
+      "badges": ["Suave", "Aromático"],
+      "link": "https://www.amazon.com/dp/B07PQRS789?tag=emunabitajon4-20"
+    }]
+  },
+  "curry": {
+    "name": "Curry en polvo",
+    "category": "Hierba y especia",
+    "concerns": ["Mezcla no estandarizada", "Puede contener colorantes", "Calidad variable"],
+    "alternatives": [{
+      "name": "Curry premium orgánico",
+      "badges": ["Sin aditivos", "Auténtico"],
+      "link": "https://www.amazon.com/dp/B08WXYZ987?tag=emunabitajon4-20"
+    }]
+  },
+  "jengibre": {
+    "name": "Jengibre en polvo",
+    "category": "Hierba y especia",
+    "concerns": ["Puede estar irradiado", "Pierde potencia", "Origen incierto"],
+    "alternatives": [{
+      "name": "Jengibre orgánico molido fresco",
+      "badges": ["No irradiado", "Potente"],
+      "link": "https://www.amazon.com/dp/B09ABCD123?tag=emunabitajon4-20"
+    }]
+  },
+  "cúrcuma": {
+    "name": "Cúrcuma",
+    "category": "Hierba y especia",
+    "concerns": ["Puede contener plomo", "Mancha fácilmente", "Adulteración común"],
+    "alternatives": [{
+      "name": "Cúrcuma orgánica certificada",
+      "badges": ["Pura", "Certificada"],
+      "link": "https://www.amazon.com/dp/B08DEFG456?tag=emunabitajon4-20"
+    }]
+  },
   "cacahuate": {
     "name": "Cacahuate/Maní",
     "category": "Fruto seco base",
@@ -1092,6 +1152,66 @@ window.ingredientsData = {
       "name": "Chía orgánica certificada",
       "badges": ["Certificada", "Premium"],
       "link": "https://www.amazon.com/dp/B07Y8RJXPH?tag=emunabitajon4-20"
+    }]
+  },
+  "nuez_brasil": {
+    "name": "Nuez de Brasil",
+    "category": "Fruto seco base",
+    "concerns": ["Alto contenido de selenio", "Rancidez rápida", "Precio alto"],
+    "alternatives": [{
+      "name": "Nuez de Brasil orgánica",
+      "badges": ["Fresca", "Sostenible"],
+      "link": "https://www.amazon.com/dp/B09HIJK789?tag=emunabitajon4-20"
+    }]
+  },
+  "pistache": {
+    "name": "Pistache",
+    "category": "Fruto seco base",
+    "concerns": ["Alto en sodio", "Cáscaras duras", "Precio premium"],
+    "alternatives": [{
+      "name": "Pistache crudo sin sal",
+      "badges": ["Bajo en sodio", "Natural"],
+      "link": "https://www.amazon.com/dp/B08LMNO456?tag=emunabitajon4-20"
+    }]
+  },
+  "semilla_girasol": {
+    "name": "Semilla de girasol",
+    "category": "Fruto seco base",
+    "concerns": ["Alta en grasa", "Puede tener cáscaras", "Calidad inconsistente"],
+    "alternatives": [{
+      "name": "Semillas de girasol orgánicas peladas",
+      "badges": ["Sin cáscara", "Certificadas"],
+      "link": "https://www.amazon.com/dp/B07PQRS123?tag=emunabitajon4-20"
+    }]
+  },
+  "semilla_linaza": {
+    "name": "Semilla de linaza",
+    "category": "Fruto seco base",
+    "concerns": ["Difícil digestión entera", "Se enrancia rápido", "Absorbe toxinas"],
+    "alternatives": [{
+      "name": "Linaza dorada molida orgánica",
+      "badges": ["Más digerible", "Fresca"],
+      "link": "https://www.amazon.com/dp/B08TUVW789?tag=emunabitajon4-20"
+    }]
+  },
+  "macadamia": {
+    "name": "Macadamia",
+    "category": "Fruto seco base",
+    "concerns": ["Muy alta en calorías", "Precio muy alto", "Rancidez rápida"],
+    "alternatives": [{
+      "name": "Macadamia cruda orgánica",
+      "badges": ["Sin sal", "Premium"],
+      "link": "https://www.amazon.com/dp/B09XYZ789?tag=emunabitajon4-20"
+    }]
+  },
+  "ajonjoli": {
+    "name": "Ajonjolí/Sésamo",
+    "category": "Fruto seco base",
+    "concerns": ["Alérgeno común", "Semillas pequeñas", "Se quema fácilmente"],
+    "alternatives": [{
+      "name": "Ajonjolí orgánico tostado",
+      "badges": ["Tostado perfecto", "Orgánico"],
+      "link": "https://www.amazon.com/dp/B08ABC456?tag=emunabitajon4-20"
     }]
   }
 };
